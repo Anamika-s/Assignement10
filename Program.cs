@@ -6,30 +6,31 @@ namespace Assignement10
 {
     class Program
     {
-        public static List<Products> productList;
+        public static List<Product> productList;
         static void Main(string[] args)
         {
-            Products.DisplayProductname();
-            Products product = new Products();
-            List<Products> productList = new List<Products>();
+            Product.DisplayProductName();
+            Product product = new Product();
+            productList = new List<Product>();
 
-            for(int i = 0; i < 10; i++)
+            for(int i = 0; i < 3; i++)
             {
-                product = new Products();
-                product.GetProductInfo();
+                product = new Product();
+                product.GetProductDetails();
                 productList.Add(product);
             }
 
-            foreach (Products list in productList)
-            {
-                Console.Write(list.productCode + "\t");
-                Console.Write(list.productName + "\t");
-                Console.Write(list.productPrice + "\t");
-                Console.Write(list.qntInStock + "\t");
-            }
+            product.DisplayProductList();
+            //foreach (Products list in productList)
+            //{
+            //    Console.Write(list.productCode + "\t");
+            //    Console.Write(list.productName + "\t");
+            //    Console.Write(list.productPrice + "\t");
+            //    Console.Write(list.qntInStock + "\t");
+            //}
             Customer customer = new Customer();
-            customer.GetOrdered();
-            customer.GetBill();
+            customer.GetOrder();
+        
             /*
             List<Products> productlist = new List<Products>()
             {
